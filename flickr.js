@@ -1,5 +1,5 @@
-var keyword = "stalin";
-var rate = 100;
+var keyword = null;
+var rate = null;
 var data = null;
 
 
@@ -29,6 +29,10 @@ function newimage() {
 window.onload = function() {
     keyword = get("keyword");
     rate = get("rate");
+    if (keyword == undefined)
+        keyword = "stalin";
+    if (rate == undefined)
+        rate = 30;
 
     let search = 'https://api.flickr.com/services/rest/?format=json&method=flickr.photos.search&api_key=8be84229a39631f3d6addac0bc09a3dd&sort=interestingness-asc&per_page=' + rate.toString() + '&tags=' + keyword + '&jsoncallback=?'
 
